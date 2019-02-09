@@ -1,0 +1,107 @@
+<div ng-controller="connectCtrl">
+	<!-- Display general contact information -->
+	<div>
+		<div class="container section contact">
+			<h1 class="title text-center">Contact</h1>
+			<div class="titleBorder"></div>
+			<div class="col-sm-6 text-center">
+				<h3>OCA Greater Seattle</h3>
+				<h4><i class="fa fa-envelope fa-1x"></i> <a href="info@ocaseattle.org">   info@ocaseattle.org</a></h4>
+				<h4><i class="fa fa-phone fa-1x"></i> (206) 274-4656</h4>
+			</div>
+			<div class="col-sm-6 text-center">
+				<h3>OCA National Office</h3>
+				<h4><i class="fa fa-envelope fa-1x"></i><a href="mailto:oca@ocanational.org">   oca@ocanational.org</a></h4>
+				<h4><i class="fa fa-phone fa-1x"></i> (202) 223-5500</h4>
+			</div>
+		</div>
+	</div>
+
+	<!-- Display reasons on why to join -->
+	<div class="container section">
+		<div class="container">
+			<h1 class="title text-center">Why Join?</h1>
+			<div class="titleBorder"></div>
+			<p class="contentText">Take pride in our community and be part of an active organization that will keep you engaged in Asian Pacific American advocacy. As a member of OCA, not only will you be supporting the APA community locally and nationally, you will also become eligible to enjoy the following benefits:</p>
+            <ul class="benefits row">
+				<li class="col-md-3 col-lg-3">
+                    <img src="img/connection.png" />
+                    <h2>Networking Opportunities</h2>
+                    <p>Network with over 80 chapters and affiliates</p>
+                </li>
+				<li class="col-md-3 col-lg-3">
+                    <img src="img/shop.png" />
+                    <h2>OCA Discounts</h2>
+                    <p>Receive discounts or free entrance to all OCA and affiliated events. OCA National Convention discounts are included</p>
+                </li>
+				<li class="col-md-3 col-lg-3">
+                    <img src="img/information.png" />
+                    <h2>Latest Information</h2>
+                    <p>Get the latest update on OCA’s work around immigration reform, health care reform, higher education, hate crimes and other issues impacting the APA community</p>
+                </li>
+				<li class="col-md-3 col-lg-3">
+                    <img src="img/ups.png" />
+                    <h2>UPS Savings</h2>
+                    <p>Join the UPS savings porgram</p>
+                </li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Displays information regarding sign-up -->
+	<div class="container section">
+		<h1 class="title text-center">Sign Up</h1>
+		<div class="titleBorder"></div>
+
+		<div class="container" id="memberSignUp">
+			<p>Want to become a member? Go ahead and sign up here and confirm your registration next time you meet with us in person!</p>
+		    <form name="memberForm">
+		    	<div class="row">
+		    		<div class="col-sm-9">
+			        	<label for="name">Name:</label>
+			        	<input class="form-control" ng-model="name" type="name" placeholder="First and last name" required>
+			    	</div>
+			    	<div class="col-sm-3">
+				        <label for="date">Date:</label>
+				        <input id="date" class="form-control" ng-model="date" type="date" required>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-sm-9">
+				        <label for="address">Address:</label>
+				        <input class="form-control" ng-model="address" type="address" placeholder="eg. 555 5th Ave S" required>
+				    </div>
+				    <div class="col-sm-3">
+				        <label for="zip">Zipcode:</label>
+				        <input class="form-control" ng-model="zip" type="zip" placeholder="eg. 98105" minlength="4" required>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+				        <label for="city">City:</label>
+				        <input class="form-control" ng-model="city" type="city" placeholder="eg. Seattle" required>
+				    </div>
+				    <div class="col-sm-6">
+				        <label for="state">State:</label>
+				        <input class="form-control" ng-model="state" type="state" placeholder="eg. Washington" required>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+				        <label for="email">Email:</label>
+				        <input id="invalidInput" class="form-control" ng-model="email" type="email" placeholder="eg. youremail@here.com" required>
+				    </div>
+				    <div class="col-sm-6">
+				        <label for="phone">Phone:</label>
+				        <input class="form-control" ng-model="phone" type="phone" placeholder="eg. 555-555-5555" maxlength="12" ng-minlength="9" required>
+				    </div>
+				</div>
+
+		        <button class="btn btn-danger submitMemberbutton" ng-click="checkMember()" ng-disabled="memberForm.$invalid">Submit</button>
+		        <p>{{message}}</p>
+		        <p ng-show="emailInUse">It looks like you're already a member.</p>
+
+		    </form>
+		</div>
+	</div>
+</div>
